@@ -14,7 +14,7 @@ program
   .option('-w, --watch', 'watch YAML and build when changed')
   .option(
     '-u, --sprite-url [<sprite url>]',
-    'url to set as the sprite in style.json',
+    'url to set as the sprite in style.json. e.g. https://example.com/icons',
   )
   .option(
     '-i, --sprite-input [<icon input directory>]',

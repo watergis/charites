@@ -77,7 +77,7 @@ export async function build(
 
       const iconSlug = getSpriteSlug(JSON.parse(style))
       if (!iconSlug) {
-        throw `Invalid sprite url format.`
+        throw `Please specify valid sprite url. e.g. https://example.com/icons`
       }
 
       await buildSprite(options.spriteInput, options.spriteOutput, iconSlug)
