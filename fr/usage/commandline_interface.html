@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Commandline Interface &mdash; Documentation charites 0.1.2</title>
+  <title>Commandline Interface &mdash; Documentation charites 0.2.0</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -38,12 +40,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contenu</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installation de charites en cours</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install/index.html">Installing Charites</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Usage</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Commandline Interface</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#help">help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#help">Help</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#checking-version">Checking version</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#inititalize-style-yml">Inititalize <cite>style.yml</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#convert-existing-style-json">Convert existing <cite>style.json</cite></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-style-json-from-style-yml">Build <cite>style.json</cite> from <cite>style.yml</cite></a></li>
@@ -52,9 +55,10 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="global_options.html">Global configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="example2.html">Example 2: Import existing style.json and edit it with charites</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Développement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development/index.html">Development</a></li>
 </ul>
 
         </div>
@@ -70,9 +74,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Usage</a> &raquo;</li>
-      <li>Commandline Interface</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Usage</a></li>
+      <li class="breadcrumb-item active">Commandline Interface</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/unvt/charites/blob/main/docs/source/usage/commandline_interface.rst" class="fa fa-github"> Éditer sur GitHub</a>
       </li>
@@ -83,9 +87,9 @@
            <div itemprop="articleBody">
              
   <section id="commandline-interface">
-<h1>Commandline Interface<a class="headerlink" href="#commandline-interface" title="Lien permanent vers ce titre"></a></h1>
+<h1>Commandline Interface<a class="headerlink" href="#commandline-interface" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="help">
-<h2>help<a class="headerlink" href="#help" title="Lien permanent vers ce titre"></a></h2>
+<h2>Help<a class="headerlink" href="#help" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ charites <span class="nb">help</span>
 Usage: charites <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>command<span class="o">]</span>
 
@@ -94,7 +98,7 @@ Options:
 -h, --help                              display <span class="nb">help</span> <span class="k">for</span> <span class="nb">command</span>
 
 Commands:
-init <span class="o">[</span>options<span class="o">]</span> &lt;file&gt;                   initialize a style JSON
+init <span class="o">[</span>options<span class="o">]</span> &lt;file&gt;                   initialize a style YAML
 convert &lt;source&gt; <span class="o">[</span>destination<span class="o">]</span>          convert the style JSON to YAML
 build <span class="o">[</span>options<span class="o">]</span> &lt;source&gt; <span class="o">[</span>destination<span class="o">]</span>  build a style JSON from the YAML
 serve <span class="o">[</span>options<span class="o">]</span> &lt;source&gt;                serve your map locally
@@ -102,12 +106,19 @@ serve <span class="o">[</span>options<span class="o">]</span> &lt;source&gt;    
 </pre></div>
 </div>
 </section>
+<section id="checking-version">
+<h2>Checking version<a class="headerlink" href="#checking-version" title="Lien permanent vers cette rubrique"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ charites --version
+<span class="m">0</span>.3.0
+</pre></div>
+</div>
+</section>
 <section id="inititalize-style-yml">
-<h2>Inititalize <cite>style.yml</cite><a class="headerlink" href="#inititalize-style-yml" title="Lien permanent vers ce titre"></a></h2>
+<h2>Inititalize <cite>style.yml</cite><a class="headerlink" href="#inititalize-style-yml" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ charites init -h
 Usage: charites init <span class="o">[</span>options<span class="o">]</span> &lt;file&gt;
 
-initialize a style JSON
+initialize a style YAML
 
 Options:
 -t, --tilejson-urls &lt;tilejson_urls&gt;          an URL <span class="k">for</span> TileJSON. It will create empty layers from vector_layers property of TileJSON. Please use
@@ -120,7 +131,7 @@ Options:
 </div>
 </section>
 <section id="convert-existing-style-json">
-<h2>Convert existing <cite>style.json</cite><a class="headerlink" href="#convert-existing-style-json" title="Lien permanent vers ce titre"></a></h2>
+<h2>Convert existing <cite>style.json</cite><a class="headerlink" href="#convert-existing-style-json" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ charites convert -h
 Usage: charites convert <span class="o">[</span>options<span class="o">]</span> &lt;source&gt; <span class="o">[</span>destination<span class="o">]</span>
 
@@ -132,7 +143,7 @@ Options:
 </div>
 </section>
 <section id="build-style-json-from-style-yml">
-<h2>Build <cite>style.json</cite> from <cite>style.yml</cite><a class="headerlink" href="#build-style-json-from-style-yml" title="Lien permanent vers ce titre"></a></h2>
+<h2>Build <cite>style.json</cite> from <cite>style.yml</cite><a class="headerlink" href="#build-style-json-from-style-yml" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>charites build -h
 Usage: charites build <span class="o">[</span>options<span class="o">]</span> &lt;source&gt; <span class="o">[</span>destination<span class="o">]</span>
 
@@ -151,29 +162,32 @@ Options:
 <p>if you use mapbox v2 for your style, please use <cite>–provider mapbox</cite> to specify mapbox service rather than default. Please see <cite>–provider</cite> option at <cite>serve</cite> command section.</p>
 </section>
 <section id="realtime-editor-on-browser">
-<h2>Realtime editor on browser<a class="headerlink" href="#realtime-editor-on-browser" title="Lien permanent vers ce titre"></a></h2>
+<h2>Realtime editor on browser<a class="headerlink" href="#realtime-editor-on-browser" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>charites serve -h
 Usage: charites serve <span class="o">[</span>options<span class="o">]</span> &lt;source&gt;
 
 serve your map locally
 
 Options:
---provider <span class="o">[</span>provider<span class="o">]</span>                      your map service. e.g. <span class="sb">`</span>mapbox<span class="sb">`</span>, <span class="sb">`</span>geolonia<span class="sb">`</span>
---mapbox-access-token <span class="o">[</span>mapboxAccessToken<span class="o">]</span>  Access Token <span class="k">for</span> the Mapbox
---port <span class="o">[</span>port<span class="o">]</span>                              Specify custom port
--h, --help                                 display <span class="nb">help</span> <span class="k">for</span> <span class="nb">command</span>
+--provider <span class="o">[</span>provider<span class="o">]</span>                        your map service. e.g. <span class="sb">`</span>mapbox<span class="sb">`</span>, <span class="sb">`</span>geolonia<span class="sb">`</span>
+--mapbox-access-token <span class="o">[</span>mapboxAccessToken<span class="o">]</span>    Access Token <span class="k">for</span> the Mapbox
+-i, --sprite-input <span class="o">[</span>&lt;icon input directory&gt;<span class="o">]</span>  directory path of icon <span class="nb">source</span> to build icons. The default &lt;icon
+                                             source&gt; is <span class="sb">`</span>icons/<span class="sb">`</span>
+--port <span class="o">[</span>port<span class="o">]</span>                                Specify custom port
+-h, --help                                   display <span class="nb">help</span> <span class="k">for</span> <span class="nb">command</span>
 </pre></div>
 </div>
 <p>Charites has three options for <cite>serve</cite> command.</p>
 <ul class="simple">
-<li><p><cite>–provider</cite> - <cite>mapbox</cite>, <cite>geolonia</cite>, or <cite>default</cite>. When not specified, default or the value in the configuration file will be used.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">--provider</span></code> - <cite>mapbox</cite>, <cite>geolonia</cite>, or <cite>default</cite>. When not specified, default or the value in the configuration file will be used.</p>
 <ul>
 <li><p><cite>mapbox</cite> - The format linter runs against the Mapbox GL JS v2.x compatible specification.</p></li>
 <li><p><cite>geolonia</cite> and <cite>default</cite> - the format linter runs against the MapLibre GL JS compatible specification.</p></li>
 </ul>
 </li>
-<li><p><cite>–mapbox-access-token</cite> - Set your access-token when styling for Mapbox.</p></li>
-<li><p><cite>–port</cite> - Set http server’s port number. When not specified, use 8080 port.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--mapbox-access-token</span></code> - Set your access-token when styling for Mapbox.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--sprite-input</span></code> - If you are building icon spritesheets with Charites, you can specify the directory of SVG files to compile here. See the <code class="docutils literal notranslate"><span class="pre">build</span></code> command for more information.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--port</span></code> - Set http server’s port number. When not specified, the default is 8080.</p></li>
 </ul>
 </section>
 </section>
@@ -189,7 +203,7 @@ Options:
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, The United Nations Vector Tile Toolkit.</p>
+    <p>&#169; Copyright 2022, The United Nations Vector Tile Toolkit.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

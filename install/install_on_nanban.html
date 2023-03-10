@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>charites on unvt/nanban &mdash; charites 0.1.2 documentation</title>
+  <title>charites on unvt/nanban &mdash; charites 0.2.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -14,11 +14,13 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Usage" href="../usage/index.html" />
+    <link rel="next" title="Installation guide for windows users" href="installation_guide_for_windows.html" />
     <link rel="prev" title="Install" href="install.html" /> 
 </head>
 
@@ -43,6 +45,7 @@
 <li class="toctree-l2"><a class="reference internal" href="recommended_environment.html">Recommended environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="install.html">Install</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">charites on unvt/nanban</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_guide_for_windows.html">Installation guide for windows users</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/index.html">Usage</a></li>
@@ -62,9 +65,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html">Installing Charites</a> &raquo;</li>
-      <li>charites on unvt/nanban</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Installing Charites</a></li>
+      <li class="breadcrumb-item active">charites on unvt/nanban</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/unvt/charites/blob/main/docs/source/install/install_on_nanban.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -75,8 +78,8 @@
            <div itemprop="articleBody">
              
   <section id="charites-on-unvt-nanban">
-<h1>charites on unvt/nanban<a class="headerlink" href="#charites-on-unvt-nanban" title="Permalink to this headline"></a></h1>
-<p>Charites runs on Docker with one of UNVT tools named <a class="reference external" href="https://github.com/unvt/nanban">unvt/nanban</a>.</p>
+<h1>charites on unvt/nanban<a class="headerlink" href="#charites-on-unvt-nanban" title="Permalink to this heading"></a></h1>
+<p>Charites runs on Docker with one of UNVT tools named <a class="reference external" href="https://github.com/unvt/nanban">unvt/nanban</a>. Charites is already installed in the tool, so you can use it by just staring unvt/nanban.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run -ti --rm -v <span class="si">${</span><span class="nv">PWD</span><span class="si">}</span>:/data -p <span class="m">8080</span>:8080 unvt/nanban
 $ <span class="nb">cd</span> /data
 </pre></div>
@@ -88,13 +91,13 @@ $ <span class="nb">cd</span> /data
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="install.html" class="btn btn-neutral float-left" title="Install" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../usage/index.html" class="btn btn-neutral float-right" title="Usage" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation_guide_for_windows.html" class="btn btn-neutral float-right" title="Installation guide for windows users" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, The United Nations Vector Tile Toolkit.</p>
+    <p>&#169; Copyright 2022, The United Nations Vector Tile Toolkit.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
